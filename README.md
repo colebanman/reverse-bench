@@ -40,3 +40,11 @@ This mode is for agentic frameworks (like Aider, OpenDevin, or custom loops) tha
 
 ---
 
+
+---
+
+## 🗄️ About `ground_truth.json`
+
+The `ground_truth.json` file contains the secret, mathematically perfect answers for the 100 test cases. 
+* The `evaluate_cli.js` script uses this file to silently check your LLM's outputs.
+* **If your LLM reads this file, the test is invalid.** It must deduce these exact answers strictly by statically analyzing the obfuscated code in `llm_prompt.json`.
