@@ -40,13 +40,3 @@ This mode is for agentic frameworks (like Aider, OpenDevin, or custom loops) tha
 
 ---
 
-## 🔒 A Note on Sandbox Bypasses
-
-If your LLM writes a generic wrapper script to brute-force the execution:
-```javascript
-const solver = require('./obfuscated.js');
-console.log(solver(inputA, inputB...));
-```
-**It will execute flawlessly and return a beautifully formatted output.** 
-
-However, when you grade it, it will score `0.0`. The obfuscation engine injects subtle environmental poisoning. If it detects a generic Node.js sandbox or a hooked evaluation environment, it invisibly mutates the internal math. The only way to get a `1.0` is for the LLM to actually read the AST, navigate the traps, and extract the pure logic.
